@@ -3,8 +3,8 @@ import TaskForm from "../component/TaskForm";
 
 const TaskPage = () => {
   return (
-    <div>
-      <h1>Task</h1>
+    <div className="container mt-4">
+      <h1 className="text-center">Task</h1>
       <TaskForm />
     </div>
   );

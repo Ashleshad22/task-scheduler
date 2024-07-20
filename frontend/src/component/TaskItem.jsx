@@ -9,13 +9,26 @@ const TaskItem = ({ task }) => {
   };
 
   return (
-    <div className="task-item">
-      <h3>{task.name}</h3>
-      <p>{task.description}</p>
-      <p>Deadline: {new Date(task.deadline).toLocaleDateString()}</p>
-      <p>Priority: {task.priority}</p>
-      <Link to={`/task/${task._id}`}>Edit</Link>
-      <button onClick={handleDelete}>Delete</button>
+    <div className="col-md-4 mb-3">
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">{task.name}</h5>
+          <p className="card-text">{task.description}</p>
+          <p className="card-text">
+            Deadline: {new Date(task.deadline).toLocaleDateString()}
+          </p>
+          <p className="card-text">Priority: {task.priority}</p>
+          <Link
+            to={`/task/${task._id}`}
+            className="btn btn-primary btn-sm mr-2"
+          >
+            Edit
+          </Link>
+          <button onClick={handleDelete} className="btn btn-danger btn-sm">
+            Delete
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

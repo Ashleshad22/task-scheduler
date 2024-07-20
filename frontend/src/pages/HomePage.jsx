@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>Task Scheduler</h1>
-      <Link to="/task/new">Add New Task</Link>
+    <div className="container mt-4">
+      <h1 className="text-center">Task Scheduler</h1>
+      <Link to="/task/new" className="btn btn-primary mb-4">
+        Add New Task
+      </Link>
       <TaskList />
     </div>
   );

@@ -39,39 +39,66 @@ const TaskForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        value={task.name}
-        onChange={handleChange}
-        placeholder="Task Name"
-        required
-      />
-      <textarea
-        name="description"
-        value={task.description}
-        onChange={handleChange}
-        placeholder="Task Description"
-        required
-      />
-      <input
-        type="date"
-        name="deadline"
-        value={task.deadline}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="number"
-        name="priority"
-        value={task.priority}
-        onChange={handleChange}
-        min="1"
-        required
-      />
-      <button type="submit">Save Task</button>
-    </form>
+    <div className="container mt-4">
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Task Name</label>
+          <input
+            type="text"
+            className="form-control"
+            id="name"
+            name="name"
+            value={task.name}
+            onChange={handleChange}
+            placeholder="Task Name"
+            required
+          />
+        </div>
+        <div className="form-group mt-3">
+          <label htmlFor="description">Task Description</label>
+          <textarea
+            className="form-control"
+            id="description"
+            name="description"
+            value={task.description}
+            onChange={handleChange}
+            placeholder="Task Description"
+            required
+          />
+        </div>
+        <div className="form-group mt-3">
+          <label htmlFor="deadline">Deadline</label>
+          <input
+            type="date"
+            className="form-control"
+            id="deadline"
+            name="deadline"
+            value={task.deadline}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group mt-3">
+          <label htmlFor="priority">Priority</label>
+          <input
+            type="number"
+            className="form-control"
+            id="priority"
+            name="priority"
+            value={task.priority}
+            onChange={handleChange}
+            min="1"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          className="btn btn-success mt-3"
+        >
+          Save Task
+        </button>
+      </form>
+    </div>
   );
 };
 
